@@ -7,8 +7,8 @@ class MeilisearchClient {
   private client: MeiliSearch;
 
   private constructor() {
-    const host = "https://ms-4d4dc9f07c2a-106.lon.meilisearch.io";
-    const apiKey = "d8c82c66e38501322f6a83a5eb464c062ff84b11"; // Use MEILISEARCH_SEARCH_KEY for more security
+    const host = process.env.NEXT_PUBLIC_MEILISEARCH_URL;
+    const apiKey = process.env.NEXT_PUBLIC_MEILISEARCH_SEARCH_KEY;
 
     if (!host) {
       throw new Error('MEILISEARCH_URL is not defined');
